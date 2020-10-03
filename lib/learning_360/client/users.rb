@@ -69,7 +69,7 @@ module Learning360
       end
 
       def add_manager(user_email, manager_email)
-        response = self.class.put("#{BASE}/#{user_email}/managers/#{manager_email}" {
+        response = self.class.put("#{BASE}/#{user_email}/managers/#{manager_email}", {
            headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
            }
@@ -78,7 +78,7 @@ module Learning360
       end
 
       def delete_manager(user_email, manager_email)
-        response = self.class.delete("#{BASE}/#{user_email}/managers/#{manager_email}" {
+        response = self.class.delete("#{BASE}/#{user_email}/managers/#{manager_email}", {
            headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
            }
@@ -87,7 +87,7 @@ module Learning360
       end
 
       def unsubscribe_to_email_notifications(emails = [])
-        response = self.class.put("#{BASE}/unsubscribeToEmailNotifications" {
+        response = self.class.put("#{BASE}/unsubscribeToEmailNotifications", {
           body: { usersEmails: emails },
           headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
@@ -97,7 +97,7 @@ module Learning360
       end
 
       def subscribe_to_email_notifications(emails = [])
-        response = self.class.put("#{BASE}/subscribeToEmailNotifications" {
+        response = self.class.put("#{BASE}/subscribeToEmailNotifications", {
           body: { usersEmails: emails },
           headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
@@ -107,7 +107,7 @@ module Learning360
       end
 
       def add_external_id(email, external_platform, external_id)
-        response = self.class.put("#{BASE}/#{email}/externalId" {
+        response = self.class.put("#{BASE}/#{email}/externalId", {
           body: { externalPlatform: external_platform, externalId: external_id },
           headers: {
              "Content-Type" => "application/x-www-form-urlencoded"

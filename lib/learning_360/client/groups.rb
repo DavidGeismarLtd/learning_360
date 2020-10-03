@@ -71,7 +71,7 @@ module Learning360
       end
 
       def get_programs(id)
-        response = self.class.put("#{BASE}/#{id}/programs" {
+        response = self.class.put("#{BASE}/#{id}/programs", {
            headers: {
              "Content-Type" => "application/json"
            }
@@ -80,7 +80,7 @@ module Learning360
       end
 
       def add_to_catalog(id, options={})
-        response = self.class.delete("#{BASE}/#{id}/catalog" {
+        response = self.class.delete("#{BASE}/#{id}/catalog", {
            body: URI.encode_www_form(options),
            headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
@@ -90,7 +90,7 @@ module Learning360
       end
 
       def delete_from_catalog(id, options={})
-        response = self.class.put("#{BASE}/#{id}/catalog" {
+        response = self.class.put("#{BASE}/#{id}/catalog", {
           body: URI.encode_www_form(options),
           headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
