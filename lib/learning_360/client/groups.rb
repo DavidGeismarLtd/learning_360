@@ -7,7 +7,7 @@ module Learning360
          body: URI.encode_www_form(options),
          headers: {
            "Content-Type" => "application/x-www-form-urlencoded"
-         },
+         }
        })
         JSON.parse(response.body)
       end
@@ -18,7 +18,7 @@ module Learning360
            body: URI.encode_www_form(options),
            headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
-           },
+           }
          })
          JSON.parse(response.body)
       end
@@ -27,7 +27,7 @@ module Learning360
        response = self.class.get("#{BASE}/#{id}", {
          headers: {
            "Content-Type" => "application/json"
-         },
+         }
        })
        JSON.parse(response.body)
       end
@@ -36,7 +36,7 @@ module Learning360
         response = self.class.get(BASE, {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -45,7 +45,7 @@ module Learning360
         response = self.class.delete("#{BASE}/#{id}", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -55,7 +55,7 @@ module Learning360
           body: URI.encode_www_form(options),
           headers: {
             "Content-Type" => "application/x-www-form-urlencoded"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -65,7 +65,7 @@ module Learning360
           body: URI.encode_www_form(options),
           headers: {
             "Content-Type" => "application/x-www-form-urlencoded"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -74,7 +74,7 @@ module Learning360
         response = self.class.put("#{BASE}/#{id}/programs" {
            headers: {
              "Content-Type" => "application/json"
-           },
+           }
          })
          JSON.parse(response.body)
       end
@@ -84,7 +84,7 @@ module Learning360
            body: URI.encode_www_form(options),
            headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
-           },
+           }
          })
          JSON.parse(response.body)
       end
@@ -94,7 +94,7 @@ module Learning360
           body: URI.encode_www_form(options),
           headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
-           },
+           }
          })
          JSON.parse(response.body)
       end

@@ -7,7 +7,7 @@ module Learning360
        response = self.class.get("#{BASE}/templates/#{template_id}", {
          headers: {
            "Content-Type" => "application/json"
-         },
+         }
        })
        JSON.parse(response.body)
       end
@@ -16,7 +16,7 @@ module Learning360
         response = self.class.get("#{BASE}/templates", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -25,7 +25,7 @@ module Learning360
         response = self.class.get("#{BASE}/templates/#{template_id}/users", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -35,7 +35,7 @@ module Learning360
           body: URI.encode_www_form(options),
           headers: {
             "Content-Type" => "application/x-www-form-urlencoded"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -45,7 +45,7 @@ module Learning360
           body: URI.encode_www_form(options),
           headers: {
             "Content-Type" => "application/x-www-form-urlencoded"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -54,7 +54,7 @@ module Learning360
         response = self.class.get("#{BASE}/programs/sessions/#{session_id}", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -63,7 +63,7 @@ module Learning360
         response = self.class.get("#{BASE}/programs/sessions", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -72,7 +72,7 @@ module Learning360
         response = self.class.delete("#{BASE}/programs/sessions/#{session_id}", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -81,7 +81,7 @@ module Learning360
         response = self.class.put("#{BASE}/programs/sessions/#{session_id}/users/#{user_id}", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -91,7 +91,7 @@ module Learning360
         response = self.class.delete("#{BASE}/programs/sessions/#{session_id}/users/#{user_id}", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -100,7 +100,7 @@ module Learning360
         response = self.class.put("#{BASE}/programs/sessions/#{session_id}/groups/#{group_id}", {
           headers: {
             "Content-Type" => "application/x-www-form-urlencoded"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -109,7 +109,7 @@ module Learning360
         response = self.class.delete("#{BASE}/programs/sessions/#{session_id}/groups/#{group_id}", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end

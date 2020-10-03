@@ -7,7 +7,7 @@ module Learning360
          body: URI.encode_www_form(options),
          headers: {
            "Content-Type" => "application/x-www-form-urlencoded"
-         },
+         }
        })
         JSON.parse(response.body)
       end
@@ -18,7 +18,7 @@ module Learning360
            body: URI.encode_www_form(options),
            headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
-           },
+           }
          })
          JSON.parse(response.body)
       end
@@ -27,7 +27,7 @@ module Learning360
        response = self.class.get("#{BASE}/#{email}", {
          headers: {
            "Content-Type" => "application/json"
-         },
+         }
        })
        JSON.parse(response.body)
       end
@@ -36,7 +36,7 @@ module Learning360
         response = self.class.get(BASE, {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -45,7 +45,7 @@ module Learning360
         response = self.class.delete("#{BASE}/#{email}", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -54,7 +54,7 @@ module Learning360
         response = self.class.get("#{BASE}/#{id}/programs", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -63,7 +63,7 @@ module Learning360
         response = self.class.get("#{BASE}/#{id}/courses", {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
@@ -72,7 +72,7 @@ module Learning360
         response = self.class.put("#{BASE}/#{user_email}/managers/#{manager_email}" {
            headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
-           },
+           }
          })
          JSON.parse(response.body)
       end
@@ -81,7 +81,7 @@ module Learning360
         response = self.class.delete("#{BASE}/#{user_email}/managers/#{manager_email}" {
            headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
-           },
+           }
          })
          JSON.parse(response.body)
       end
@@ -91,7 +91,7 @@ module Learning360
           body: { usersEmails: emails },
           headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
-           },
+           }
          })
          JSON.parse(response.body)
       end
@@ -101,7 +101,7 @@ module Learning360
           body: { usersEmails: emails },
           headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
-           },
+           }
          })
          JSON.parse(response.body)
       end
@@ -111,7 +111,7 @@ module Learning360
           body: { externalPlatform: external_platform, externalId: external_id },
           headers: {
              "Content-Type" => "application/x-www-form-urlencoded"
-           },
+           }
          })
          JSON.parse(response.body)
       end

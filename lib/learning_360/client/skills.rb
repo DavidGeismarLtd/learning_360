@@ -7,7 +7,7 @@ module Learning360
         response = self.class.get(BASE, {
           headers: {
             "Content-Type" => "application/json"
-          },
+          }
         })
         JSON.parse(response.body)
       end
