@@ -1,8 +1,8 @@
-require_relative 'learning_360/client/users'
-require_relative 'learning_360/client/groups'
-require_relative 'learning_360/client/courses'
-require_relative 'learning_360/client/programs'
-require_relative 'learning_360/client/skills'
+require 'learning_360/client/users'
+require 'learning_360/client/groups'
+require 'learning_360/client/courses'
+require 'learning_360/client/programs'
+require 'learning_360/client/skills'
 
 module Learning360
   class Client
