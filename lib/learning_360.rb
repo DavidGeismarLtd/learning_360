@@ -1,2 +1,2 @@
 require "learning_360/version"
-require "client"
+require "learning_360/client"
