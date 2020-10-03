@@ -1,3 +1,9 @@
+require 'client/users'
+require 'client/groups'
+require 'client/courses'
+require 'client/programs'
+require 'client/skills'
+
 module Learning360
   class Client
     include HTTParty
