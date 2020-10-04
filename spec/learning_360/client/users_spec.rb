@@ -17,8 +17,9 @@ RSpec.describe Learning360::Client::Users do
 
     it "given a email, it returns the correct user object" do
       VCR.use_cassette('users/get_user/success') do
-        resp = client.get_user("davidgeismar@hotmail.fr")
-        expect(resp).to eq(Learning360::User)
+        resp = client.get_user("axel.assouline@gmail.com")
+        expect(resp.class).to eq(Learning360::User)
+        expect(resp.firstName).to eq("Axel")
       end
     end
   end

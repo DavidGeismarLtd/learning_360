@@ -23,7 +23,7 @@ module Learning360
       end
 
       def get_user(email)
-        request do
+        request(User) do
           response = self.class.get("#{BASE}/#{email}", {
             headers: {
               "Content-Type" => "application/json"

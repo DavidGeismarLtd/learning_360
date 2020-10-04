@@ -23,11 +23,12 @@ module Learning360
       self.class.default_options.merge!(query: { apiKey: api_key, company: company_id })
     end
 
-    def request(&block)
+    def request(resource = nil, &block)
       parsed_response = JSON.parse(yield)
       error_message = parsed_response["error"]
       raise error_message if error_message
-      # create resource
+      return resource.new(parsed_response) if resource
+      parsed_response
     end
   end
 end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://app.360learning.com/api/v1/users/davidgeismar@hotmail.fr?apiKey=f2baa99894f54555a7477ba82e74de75&company=5e3fcc75ed7c2c8812bfaf95
+    uri: http://app.360learning.com/api/v1/users/axel.assouline@gmail.com?apiKey=f2baa99894f54555a7477ba82e74de75&company=5e3fcc75ed7c2c8812bfaf95
     body:
       encoding: US-ASCII
       string: ''
@@ -17,15 +17,15 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Date:
-      - Sun, 04 Oct 2020 13:45:00 GMT
+      - Sun, 04 Oct 2020 14:05:35 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '26'
+      - '769'
       Connection:
       - keep-alive
       X-Ua-Compatible:
@@ -41,55 +41,16 @@ http_interactions:
       Access-Control-Allow-Headers:
       - Authorization, Origin, X-Requested-With, Content-Type, Accept
       Etag:
-      - W/"1a-N0LsTKyCHP4vuAelbhlz0GK2Lvs"
+      - W/"301-nZXQtxFS3YNGFG+ebf5rEhe0ZDk"
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin
     body:
       encoding: UTF-8
-      string: '{"error":"user_not_found"}'
-  recorded_at: Sun, 04 Oct 2020 13:45:00 GMT
-- request:
-    method: get
-    uri: http://app.360learning.com/api/v1/users/davidgeismar@hotmail.fr?apiKey=f2baa99894f54555a7477ba82e74de75&company=5e3fcc75ed7c2c8812bfaf95
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Date:
-      - Sun, 04 Oct 2020 13:45:02 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '26'
-      Connection:
-      - keep-alive
-      X-Ua-Compatible:
-      - IE=edge
-      Cache-Control:
-      - no-cache, no-store, private
-      X-Robots-Tag:
-      - noindex
-      Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS, PUT, DELETE
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Authorization, Origin, X-Requested-With, Content-Type, Accept
-      Etag:
-      - W/"1a-N0LsTKyCHP4vuAelbhlz0GK2Lvs"
-    body:
-      encoding: UTF-8
-      string: '{"error":"user_not_found"}'
-  recorded_at: Sun, 04 Oct 2020 13:45:02 GMT
+      string: '{"_id":"5f5736a14b086e254b475e28","mail":"axel.assouline@gmail.com","firstName":"Axel","lastName":"Assouline","assignedPrograms":1,"paths":[],"certifications":[],"championAchievements":{"coursesPublished":["Champion"],"authoringToolExplored":["Apprenti
+        Champion"],"repliesOnOwnActivitiesGiven":[],"positiveReactionsOnOwnContent":[]},"comments":0,"completedPrograms":0,"groups":[],"imageUrl":"https://app.360learning.com/api/medias/user/5f5736a14b086e254b475e28","labels":[],"lastLoginAt":"2020-09-30T15:01:37.267Z","championStatus":"potentialChampion","learnerAchievements":{"reactionsGiven":[],"repliesGiven":[],"coursesPlayed":[]},"managers":[],"messages":0,"publications":0,"reactions":0,"skills":[],"subordinates":[],"toDeactivateAt":"","totalTimeSpentInMinutes":2}'
+  recorded_at: Sun, 04 Oct 2020 14:05:35 GMT
 recorded_with: VCR 6.0.0
