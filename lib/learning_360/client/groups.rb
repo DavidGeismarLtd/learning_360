@@ -2,7 +2,7 @@ module Learning360
   class Client
     module Groups
       BASE = '/groups'
-      def create(options = {})
+      def create_group(options = {})
        response = self.class.post(BASE, {
          body: URI.encode_www_form(options),
          headers: {
@@ -12,7 +12,7 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def update(id, options = {})
+      def update_group(id, options = {})
         response = self.class.put("BASE/#{id}", {
            params: { user_email: email },
            body: URI.encode_www_form(options),
@@ -23,7 +23,7 @@ module Learning360
          JSON.parse(response.body)
       end
 
-      def get(id)
+      def get_group(id)
        response = self.class.get("#{BASE}/#{id}", {
          headers: {
            "Content-Type" => "application/json"
@@ -41,7 +41,7 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def delete(id)
+      def delete_group(id)
         response = self.class.delete("#{BASE}/#{id}", {
           headers: {
             "Content-Type" => "application/json"
@@ -50,7 +50,7 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def add_user(group_id, user_email, options={})
+      def add_user_to_group(group_id, user_email, options={})
         response = self.class.put("#{BASE}/#{group_id}/users/#{user_email}", {
           body: URI.encode_www_form(options),
           headers: {
@@ -60,7 +60,7 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def delete_user(id, user_email, options={})
+      def delete_user_from_group(id, user_email, options={})
         response = self.class.delete("#{BASE}/#{id}/users/#{user_email}", {
           body: URI.encode_www_form(options),
           headers: {

@@ -1,5 +1,13 @@
 require "bundler/setup"
+require "rspec"
 require "learning_360"
+require "webmock/rspec"
+require "vcr"
+require "support"
+
+# Bundler.setup
+
+WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
