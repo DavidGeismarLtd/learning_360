@@ -1,5 +1,6 @@
 require 'httparty'
 require 'learning_360/user'
+require 'learning_360/program_template'
 require 'learning_360/client/users'
 require 'learning_360/client/groups'
 require 'learning_360/client/courses'
@@ -25,7 +26,7 @@ module Learning360
 
     def request(resource = nil, &block)
       parsed_response = JSON.parse(yield)
-      error_message = parsed_response["error"]
+      error_message = parsed_response["error"] || parsed_response["message"]
       raise error_message if error_message
       return resource.new(parsed_response) if resource
       parsed_response
