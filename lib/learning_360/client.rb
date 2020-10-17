@@ -6,7 +6,6 @@ require 'learning_360/client/groups'
 require 'learning_360/client/courses'
 require 'learning_360/client/programs'
 require 'learning_360/client/skills'
-require 'pry-byebug'
 
 module Learning360
   class Client
