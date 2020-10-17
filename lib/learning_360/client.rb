@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'httparty'
 require 'learning_360/user'
 require 'learning_360/program_template'
@@ -8,6 +10,7 @@ require 'learning_360/client/programs'
 require 'learning_360/client/skills'
 
 module Learning360
+  # client for 360learning API
   class Client
     include HTTParty
     include Learning360::Client::Users
@@ -18,16 +21,22 @@ module Learning360
     base_uri 'app.360learning.com/api/v1'
 
     def initialize(api_key = nil, company_id = nil)
-      api_key = api_key || ENV["LEARNING_API_KEY"]
-      company_id = company_id || ENV["LEARNING_COMPANY_ID"]
-      self.class.default_options.merge!(query: { apiKey: api_key, company: company_id })
+      api_key ||= ENV['LEARNING_API_KEY']
+      company_id ||= ENV['LEARNING_COMPANY_ID']
+      self.class.default_options.merge!(
+        query: {
+          apiKey: api_key,
+          company: company_id
+        }
+      )
     end
 
-    def request(resource = nil, &block)
+    def request(resource = nil)
       parsed_response = JSON.parse(yield)
-      error_message = parsed_response["error"] || parsed_response["message"]
+      error_message = parsed_response['error'] || parsed_response['message']
       raise error_message if error_message
       return resource.new(parsed_response) if resource
+
       parsed_response
     end
   end
