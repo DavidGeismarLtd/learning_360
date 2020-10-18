@@ -8,6 +8,7 @@ require 'learning_360/client/groups'
 require 'learning_360/client/courses'
 require 'learning_360/client/programs'
 require 'learning_360/client/skills'
+require 'pry-byebug'
 
 module Learning360
   # client for 360learning API
@@ -33,8 +34,9 @@ module Learning360
 
     def request(resource = nil)
       parsed_response = JSON.parse(yield)
-      error_message = parsed_response['error'] || parsed_response['message']
+      error_message = parsed_response['error'] || parsed_response['message'] if parsed_response.is_a? Hash
       raise error_message if error_message
+      return parsed_response.map{ |item| resource.new(item) } if parsed_response.is_a?(Array) && resource
       return resource.new(parsed_response) if resource
 
       parsed_response

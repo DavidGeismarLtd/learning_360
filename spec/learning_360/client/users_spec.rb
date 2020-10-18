@@ -23,4 +23,14 @@ RSpec.describe Learning360::Client::Users do
       end
     end
   end
+
+  describe "#get_users" do
+    it "it returns all users for the current account" do
+      VCR.use_cassette('users/get_users/success') do
+        resp = client.get_users
+        expect(resp.class).to eq(Array)
+        expect(resp.first.class).to eq(Learning360::User)
+      end
+    end
+  end
 end

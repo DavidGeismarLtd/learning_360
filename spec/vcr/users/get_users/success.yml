@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://app.360learning.com/api/v1/users?apiKey=f2baa99894f54555a7477ba82e74de75&company=5e3fcc75ed7c2c8812bfaf95
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 Oct 2020 15:15:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '680'
+      Connection:
+      - keep-alive
+      X-Ua-Compatible:
+      - IE=edge
+      Cache-Control:
+      - no-cache, no-store, private
+      X-Robots-Tag:
+      - noindex
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Origin, X-Requested-With, Content-Type, Accept
+      Etag:
+      - W/"2a8-zCmAtC7NYhJoIexu8bRIAb1rt1U"
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"5e3fcc75ed7c2c8812bfaf96","mail":"jp.djian@zedental.com","firstName":"Jean
+        Paul","lastName":"DJIAN"},{"_id":"5f53a6b0356b7f798e85508c","mail":"cath.djian1@gmail.com","firstName":"CATHERINE
+        ","lastName":"DJIAN"},{"_id":"5f55e2f6612d32359acd9bbb","mail":"maianh#zedental@creetaformation.com","firstName":"Mai","lastName":"Anh"},{"_id":"5f5736a14b086e254b475e28","mail":"axel.assouline@gmail.com","firstName":"Axel","lastName":"Assouline"},{"_id":"5f58d8d663a1cd6ac3ab803d","mail":"e.louisygabriel#dev@gmail.com","firstName":"Emmanuel","lastName":"LOUISY-GABRIEL"},{"_id":"5f748f7c6a542133e15acef8","mail":"dageismar#dev@gmail.com","firstName":"David","lastName":"GEISMAR"}]'
+  recorded_at: Sun, 18 Oct 2020 15:15:01 GMT
+recorded_with: VCR 6.0.0
