@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://app.360learning.com/api/v1/skills?apiKey=f2baa99894f54555a7477ba82e74de75&company=5e3fcc75ed7c2c8812bfaf95
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Nov 2020 19:02:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '385'
+      Connection:
+      - keep-alive
+      X-Ua-Compatible:
+      - IE=edge
+      Cache-Control:
+      - no-cache, no-store, private
+      X-Robots-Tag:
+      - noindex
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Origin, X-Requested-With, Content-Type, Accept
+      Etag:
+      - W/"181-pYtdr/GRmLiMauqlBpbC6P8GKYs"
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siX2lkIjoiNWY1NzYxOGI3MmQzZDQ2YjQxMjQwMjEwIiwibmFtZSI6InBhcm9kb250b2xvZ2llIiwiaXNNYWluIjpmYWxzZSwiYXV0aG9yIjoibWFpYW5oI3plZGVudGFsQGNyZWV0YWZvcm1hdGlvbi5jb20ifSx7Il9pZCI6IjVmODgyMzhhY2NjOTQ0NmUwNWRlZDcxNiIsIm5hbWUiOiJpbXBsYW50b2xvZ2llIiwiaXNNYWluIjpmYWxzZSwiYXV0aG9yIjoibWFpYW5oI3plZGVudGFsQGNyZWV0YWZvcm1hdGlvbi5jb20ifSx7Il9pZCI6IjVmOTc0OTg3MjhjYWJhMmExZjgzNThhMiIsIm5hbWUiOiJkZW50aXN0ZXJpZSBhZGjDqXNpdmUgZXQgZXN0aMOpdGlxdWUiLCJpc01haW4iOmZhbHNlLCJhdXRob3IiOiJtYWlhbmgjemVkZW50YWxAY3JlZXRhZm9ybWF0aW9uLmNvbSJ9XQ==
+  recorded_at: Thu, 12 Nov 2020 19:02:35 GMT
+recorded_with: VCR 6.0.0
