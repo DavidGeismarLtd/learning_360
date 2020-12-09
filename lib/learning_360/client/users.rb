@@ -5,7 +5,7 @@ module Learning360
     module Users
       BASE = '/users'
       def create_or_invite_user(options = {})
-        request(User) do
+        request(UserInvitation) do
           self.class.post(BASE, {
                             body: URI.encode_www_form(options),
                             headers: {

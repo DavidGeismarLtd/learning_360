@@ -2,6 +2,7 @@
 
 require 'httparty'
 require 'learning_360/user'
+require 'learning_360/user_invitation'
 require 'learning_360/skill'
 require 'learning_360/course'
 require 'learning_360/program_template'

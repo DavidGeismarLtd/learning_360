@@ -4,8 +4,17 @@ require './spec/spec_helper'
 
 RSpec.describe Learning360::Client::Users do
   let(:client) { Learning360::Client.new }
-
-  describe '#get' do
+  describe '#create_or_invite_user' do
+    it 'when no password is defined it sends an invitation' do
+      VCR.use_cassette('users/create_or_invite_user/invitation') do
+        resp = client.create_or_invite_user(
+          mail: 'david.geismar.ext@qonto.com'
+        )
+        expect(resp.status).to eq("invitation_created")
+      end
+    end
+  end
+  describe '#get_user' do
     it 'if it doesnt have the user, it raises an error' do
       VCR.use_cassette('users/get_user/error') do
         expect do
