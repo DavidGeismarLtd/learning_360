@@ -26,6 +26,10 @@ module Learning360
     attr_accessor :api_key, :company_id
     base_uri 'app.360learning.com/api/v1'
 
+    # Initializes a new Client object
+    #
+    # @param options [Hash]
+    # @return [Learning360::Client]
     def initialize(options = {})
       options.each do |key, value|
         instance_variable_set("@#{key}", value)
@@ -41,6 +45,14 @@ module Learning360
         }
       )
       self
+    end
+
+    # @return [Hash]
+    def credentials
+      {
+        api_key: api_key,
+        company_id: company_id
+      }
     end
 
     def request(resource = nil)
