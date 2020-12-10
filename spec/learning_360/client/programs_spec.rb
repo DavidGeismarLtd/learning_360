@@ -1,7 +1,12 @@
 require './spec/spec_helper'
 
 RSpec.describe Learning360::Client::Programs do
-  let(:client) { Learning360::Client.new }
+  let(:client) do
+    Learning360::Client.new do |client|
+      client.api_key = ENV['LEARNING_API_KEY']
+      client.company_id = ENV['LEARNING_COMPANY_ID']
+    end.init!
+  end
 
   describe "#get" do
     it "if it doesnt have the template, it raises an error" do

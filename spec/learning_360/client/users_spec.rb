@@ -3,7 +3,13 @@
 require './spec/spec_helper'
 
 RSpec.describe Learning360::Client::Users do
-  let(:client) { Learning360::Client.new }
+  let(:client) do
+    Learning360::Client.new do |client|
+      client.api_key = ENV['LEARNING_API_KEY']
+      client.company_id = ENV['LEARNING_COMPANY_ID']
+    end.init!
+  end
+
   describe '#create_or_invite_user' do
     it 'when no password is defined it sends an invitation' do
       VCR.use_cassette('users/create_or_invite_user/invitation') do

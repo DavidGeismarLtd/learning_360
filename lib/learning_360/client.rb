@@ -22,17 +22,25 @@ module Learning360
     include Learning360::Client::Courses
     include Learning360::Client::Programs
     include Learning360::Client::Skills
+
+    attr_accessor :api_key, :company_id
     base_uri 'app.360learning.com/api/v1'
 
-    def initialize(api_key = nil, company_id = nil)
-      api_key ||= ENV['LEARNING_API_KEY']
-      company_id ||= ENV['LEARNING_COMPANY_ID']
+    def initialize(options = {})
+      options.each do |key, value|
+        instance_variable_set("@#{key}", value)
+      end
+      yield(self) if block_given?
+    end
+
+    def init!
       self.class.default_options.merge!(
         query: {
           apiKey: api_key,
           company: company_id
         }
       )
+      self
     end
 
     def request(resource = nil)
