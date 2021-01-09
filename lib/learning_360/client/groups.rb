@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Learning360
   class Client
     module Groups
@@ -33,13 +34,14 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def get_groups
-        response = self.class.get(BASE, {
-                                    headers: {
-                                      'Content-Type' => 'application/json'
-                                    }
-                                  })
-        JSON.parse(response.body)
+      def groups
+        request(Group) do
+          self.class.get(BASE, {
+                           headers: {
+                             'Content-Type' => 'application/json'
+                           }
+                         }).body
+        end
       end
 
       def delete_group(id)
@@ -73,12 +75,13 @@ module Learning360
 
       # Returns the program sessions to which the group has been invited.
       def get_group_programs(group_id)
-        response = self.class.get("#{BASE}/#{group_id}/programs", {
+        request(ProgramSession) do
+          self.class.get("#{BASE}/#{group_id}/programs", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }
-                                  })
-        JSON.parse(response.body)
+                                  }).body
+        end
       end
 
       def add_to_catalog(id, options = {})

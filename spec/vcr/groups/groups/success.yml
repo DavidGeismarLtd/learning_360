@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://app.360learning.com/api/v1/groups?apiKey=f2baa99894f54555a7477ba82e74de75&company=5e3fcc75ed7c2c8812bfaf95
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 09 Jan 2021 21:55:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '325'
+      Connection:
+      - keep-alive
+      X-Ua-Compatible:
+      - IE=edge
+      Cache-Control:
+      - no-cache, no-store, private
+      X-Robots-Tag:
+      - noindex
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Origin, X-Requested-With, Content-Type, Accept
+      Etag:
+      - W/"145-AuJXVkGGt2ZmHCGthmuNAh4R+Rk"
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siX2lkIjoiNWUzZmNjNzVlZDdjMmM4ODEyYmZhZjk3IiwibmFtZSI6IlplZGVudGFsIiwicHVibGljIjpmYWxzZX0seyJfaWQiOiI1ZjZkYzExN2U2ZTljYzczZmIzNDdiMDciLCJuYW1lIjoiRXNwYWNlIGUtTGVhcm5pbmcgZGUgbCdBY2Fkw6ltaWUgREVOVEVHTyIsInB1YmxpYyI6ZmFsc2UsInBhcmVudCI6IjVlM2ZjYzc1ZWQ3YzJjODgxMmJmYWY5NyJ9LHsiX2lkIjoiNWY3NjBjMTIzYjBhYTg5NzRlMTU1MzM1IiwibmFtZSI6IkxlcyBhdXRldXJzICBkZSBaZWRlbnRhbCIsInB1YmxpYyI6ZmFsc2UsInBhcmVudCI6IjVlM2ZjYzc1ZWQ3YzJjODgxMmJmYWY5NyJ9XQ==
+  recorded_at: Sat, 09 Jan 2021 21:55:41 GMT
+recorded_with: VCR 6.0.0
