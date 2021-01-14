@@ -28,4 +28,14 @@ RSpec.describe Learning360::Client::Programs do
       end
     end
   end
+
+  describe "#program_templates" do
+    it "it returns the correct program templates" do
+      VCR.use_cassette('programs/templates/success') do
+        resp = client.program_templates
+        expect(resp.class).to eq(Array)
+        expect(resp.first.class).to eq(Learning360::ProgramTemplate)
+      end
+    end
+  end
 end

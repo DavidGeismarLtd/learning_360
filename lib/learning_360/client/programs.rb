@@ -15,13 +15,14 @@ module Learning360
         end
       end
 
-      def get_templates
-        response = self.class.get("#{BASE}/templates", {
+      def program_templates
+        request(ProgramTemplate) do
+          self.class.get("#{BASE}/templates", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }
-                                  })
-        JSON.parse(response.body)
+                                  }).body
+        end
       end
 
       def get_templates_users(template_id)
