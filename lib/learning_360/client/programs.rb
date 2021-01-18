@@ -35,7 +35,7 @@ module Learning360
       end
 
       def create_session(template_id, options = {})
-        response = self.class.post("#{BASE}/programs/#{template_id}/sessions", {
+        response = self.class.post("#{BASE}/#{template_id}/sessions", {
                                      body: URI.encode_www_form(options),
                                      headers: {
                                        'Content-Type' => 'application/x-www-form-urlencoded'
@@ -45,7 +45,7 @@ module Learning360
       end
 
       def update_session(template_id, session_id, options = {})
-        response = self.class.put("#{BASE}/programs/#{template_id}/sessions/#{session_id}", {
+        response = self.class.put("#{BASE}/#{template_id}/sessions/#{session_id}", {
                                     body: URI.encode_www_form(options),
                                     headers: {
                                       'Content-Type' => 'application/x-www-form-urlencoded'
@@ -55,7 +55,7 @@ module Learning360
       end
 
       def get_session(session_id)
-        response = self.class.get("#{BASE}/programs/sessions/#{session_id}", {
+        response = self.class.get("#{BASE}/sessions/#{session_id}", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }
@@ -65,7 +65,7 @@ module Learning360
 
       def retrieve_sessions
         request(ProgramSession) do
-          self.class.get("#{BASE}/programs/sessions", {
+          self.class.get("#{BASE}/sessions", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }
@@ -74,7 +74,7 @@ module Learning360
       end
 
       def cancel_session(session_id)
-        response = self.class.delete("#{BASE}/programs/sessions/#{session_id}", {
+        response = self.class.delete("#{BASE}/sessions/#{session_id}", {
                                        headers: {
                                          'Content-Type' => 'application/json'
                                        }
@@ -83,7 +83,7 @@ module Learning360
       end
 
       def add_user_to_session(session_id, user_id)
-        response = self.class.put("#{BASE}/programs/sessions/#{session_id}/users/#{user_id}", {
+        response = self.class.put("#{BASE}/sessions/#{session_id}/users/#{user_id}", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }
@@ -92,7 +92,7 @@ module Learning360
       end
 
       def remove_user_from_session(session_id, user_id)
-        response = self.class.delete("#{BASE}/programs/sessions/#{session_id}/users/#{user_id}", {
+        response = self.class.delete("#{BASE}/sessions/#{session_id}/users/#{user_id}", {
                                        headers: {
                                          'Content-Type' => 'application/json'
                                        }
@@ -101,7 +101,7 @@ module Learning360
       end
 
       def add_group_to_program_session(group_id, session_id)
-        response = self.class.put("#{BASE}/programs/sessions/#{session_id}/groups/#{group_id}", {
+        response = self.class.put("#{BASE}/sessions/#{session_id}/groups/#{group_id}", {
                                     headers: {
                                       'Content-Type' => 'application/x-www-form-urlencoded'
                                     }
@@ -110,7 +110,7 @@ module Learning360
       end
 
       def remove_group_to_program_session(group_id, session_id)
-        response = self.class.delete("#{BASE}/programs/sessions/#{session_id}/groups/#{group_id}", {
+        response = self.class.delete("#{BASE}/sessions/#{session_id}/groups/#{group_id}", {
                                        headers: {
                                          'Content-Type' => 'application/json'
                                        }
@@ -119,7 +119,7 @@ module Learning360
       end
 
       def get_program_session_users(session_id)
-        response = self.class.get("#{BASE}/programs/sessions/#{session_id}/users", {
+        response = self.class.get("#{BASE}/sessions/#{session_id}/users", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }
@@ -128,7 +128,7 @@ module Learning360
       end
 
       def get_user_program_session_users(session_id, user_id)
-        response = self.class.get("#{BASE}/programs/sessions/#{session_id}/stats/#{user_id}", {
+        response = self.class.get("#{BASE}/sessions/#{session_id}/stats/#{user_id}", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }
@@ -137,7 +137,7 @@ module Learning360
       end
 
       def unblock_user_in_scorm(session_id, user_email)
-        response = self.class.put("#{BASE}/programs/sessions/#{session_id}/unblockScorm", {
+        response = self.class.put("#{BASE}/sessions/#{session_id}/unblockScorm", {
                                     body: { user_email: user_email },
                                     headers: {
                                       'Content-Type' => 'application/x-www-form-urlencoded'
@@ -147,7 +147,7 @@ module Learning360
       end
 
       def get_program_session_stats(session_id, _user_email)
-        response = self.class.get("#{BASE}/programs/sessions/#{session_id}/stats", {
+        response = self.class.get("#{BASE}/sessions/#{session_id}/stats", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }

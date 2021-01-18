@@ -38,4 +38,14 @@ RSpec.describe Learning360::Client::Programs do
       end
     end
   end
+
+  describe "#retrieve_sessions" do
+    it "it returns the correct program sessions" do
+      VCR.use_cassette('programs/sessions/success') do
+        resp = client.retrieve_sessions
+        expect(resp.class).to eq(Array)
+        expect(resp.first.class).to eq(Learning360::ProgramSession)
+      end
+    end
+  end
 end

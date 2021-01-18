@@ -17,7 +17,8 @@ module Learning360
       :skills,
       :sessionCustom,
       :templateCustom,
-      :validateRegistrations
+      :validateRegistrations,
+      :modules
     )
 
     def initialize(options = {})
