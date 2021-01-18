@@ -63,13 +63,14 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def get_sessions
-        response = self.class.get("#{BASE}/programs/sessions", {
+      def retrieve_sessions
+        request(ProgramSession) do
+          self.class.get("#{BASE}/programs/sessions", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }
-                                  })
-        JSON.parse(response.body)
+                                  }).body
+        end
       end
 
       def cancel_session(session_id)
