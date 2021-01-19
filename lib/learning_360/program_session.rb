@@ -12,6 +12,7 @@ module Learning360
       :startDate,
       :endDate,
       :hasUserLimit,
+      :userLimit,
       :programDuration,
       :programDurationType,
       :skills,
