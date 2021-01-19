@@ -29,6 +29,16 @@ RSpec.describe Learning360::Client::Programs do
     end
   end
 
+  describe "#retrieve_program_session_users" do
+    it "it returns the correct session users" do
+      VCR.use_cassette('programs/session_users/success') do
+        resp = client.retrieve_program_session_users("5ff5787ad215535086122c48")
+        expect(resp.class).to eq(Array)
+        expect(resp.first.class).to eq(Learning360::User)
+      end
+    end
+  end
+
   describe "#program_templates" do
     it "it returns the correct program templates" do
       VCR.use_cassette('programs/templates/success') do

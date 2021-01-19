@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://app.360learning.com/api/v1/programs/sessions/5ff5787ad215535086122c48/users?apiKey=f2baa99894f54555a7477ba82e74de75&company=5e3fcc75ed7c2c8812bfaf95
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Jan 2021 08:27:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Ua-Compatible:
+      - IE=edge
+      Cache-Control:
+      - no-cache, no-store, private
+      X-Robots-Tag:
+      - noindex
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Origin, X-Requested-With, Content-Type, Accept
+      Etag:
+      - W/"465-w5btZxSm/9EXB0fTYJKgKOffwI0"
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"_id":"5e3fcc75ed7c2c8812bfaf96","mail":"jp.djian@zedental.com","firstName":"Jean
+        Paul","lastName":"DJIAN"},{"_id":"5f53a6b0356b7f798e85508c","mail":"cath.djian1@gmail.com","firstName":"Catherine","lastName":"DJIAN"},{"_id":"5fa3ee5437e59d98f26e5084","mail":"contact@gepi-mattout.com","firstName":"Docteur
+        Paul","lastName":"MATTOUT"},{"_id":"5ff5ed42d2d12d2f4c970360","mail":"dageismar+zed@gmail.com","firstName":"David","lastName":"dageismar@gmail.com"},{"_id":"60054a734ab5e24d517d5629","mail":"davidgeismar@hotmail.fr","firstName":"John","lastName":"Doe"},{"_id":"6005736e2a37a81634a08c20","mail":"njeqq4+cil8a34bx6fk@sharklasers.com","firstName":"Jean
+        ","lastName":"Test"},{"_id":"60057591f3c3b52150911bb1","mail":"dageismar+test@gmail.com","firstName":"Dave
+        ","lastName":"test"},{"_id":"60058fe9d7c5022016a8a92c","mail":"dageismar+dupont@gmail.com","firstName":"david","lastName":"Dupont"},{"_id":"6005984adbfef0391cc01285","mail":"dageismar+testtoday@gmail.com","firstName":"david","lastName":"geismar"},{"_id":"6005afe3bbc1d279ea125235","mail":"dageismar+testlms@gmail.com","firstName":"david","lastName":"Geismar"}]'
+  recorded_at: Tue, 19 Jan 2021 08:27:25 GMT
+recorded_with: VCR 6.0.0
