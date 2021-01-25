@@ -74,13 +74,13 @@ module Learning360
       end
 
       # Returns the program sessions to which the group has been invited.
-      def get_group_programs(group_id)
+      def retrieve_group_program_sessions(group_id)
         request(ProgramSession) do
           self.class.get("#{BASE}/#{group_id}/programs", {
-                                    headers: {
-                                      'Content-Type' => 'application/json'
-                                    }
-                                  }).body
+                           headers: {
+                             'Content-Type' => 'application/json'
+                           }
+                         }).body
         end
       end
 
