@@ -97,7 +97,7 @@ module Learning360
                                          'Content-Type' => 'application/json'
                                        }
                                      })
-        JSON.parse(response.body)
+        response.success?
       end
 
       def add_group_to_program_session(group_id, session_id)

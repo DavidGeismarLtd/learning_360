@@ -63,14 +63,14 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def delete_user_from_group(id, user_email, options = {})
+      def remove_user_from_group(id, user_email, options = {})
         response = self.class.delete("#{BASE}/#{id}/users/#{user_email}", {
                                        body: URI.encode_www_form(options),
                                        headers: {
                                          'Content-Type' => 'application/x-www-form-urlencoded'
                                        }
                                      })
-        JSON.parse(response.body)
+        response.success?
       end
 
       # Returns the program sessions to which the group has been invited.
