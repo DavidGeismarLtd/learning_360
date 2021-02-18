@@ -24,7 +24,8 @@ module Learning360
       :skills,
       :subordinates,
       :toDeactivateAt,
-      :totalTimeSpentInMinutes
+      :totalTimeSpentInMinutes,
+      :custom
     )
 
     def initialize(options = {})
