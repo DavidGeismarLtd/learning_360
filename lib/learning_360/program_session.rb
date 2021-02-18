@@ -20,7 +20,8 @@ module Learning360
       :templateCustom,
       :validateRegistrations,
       :modules,
-      :groups
+      :groups,
+      :customFields
     )
 
     def initialize(options = {})
