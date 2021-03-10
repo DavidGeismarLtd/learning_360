@@ -26,7 +26,7 @@ RSpec.describe Learning360::Client::Users do
         expect do
           client.get_user('dageismar@gmail.com')
         end.to raise_error(
-          RuntimeError,
+          Learning360::ApiResponseError,
           'user_not_found'
         )
       end

@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://app.360learning.com/api/v1/programs/sessions/603cc3fbbc35b5684d66af9f/groups/6033a83de17eb78fdd56a5c5?apiKey=f2baa99894f54555a7477ba82e74de75&company=5e3fcc75ed7c2c8812bfaf95
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 10 Mar 2021 11:15:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      X-Ua-Compatible:
+      - IE=edge
+      Cache-Control:
+      - no-cache, no-store, private
+      X-Robots-Tag:
+      - noindex
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, Origin, X-Requested-With, Content-Type, Accept
+      Etag:
+      - W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 10 Mar 2021 11:15:34 GMT
+recorded_with: VCR 6.0.0

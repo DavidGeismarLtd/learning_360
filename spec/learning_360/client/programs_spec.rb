@@ -16,7 +16,7 @@ RSpec.describe Learning360::Client::Programs do
         expect do
           client.get_template('template')
         end.to raise_error(
-          RuntimeError,
+          Learning360::ApiResponseError,
           'Not Found'
         )
       end
@@ -66,6 +66,15 @@ RSpec.describe Learning360::Client::Programs do
       VCR.use_cassette('groups/remove_user_from_session/success') do
         resp = client.remove_user_from_session('5ff5787ad215535086122c48', 'david@zedental.com')
         expect(resp).to eq(true)
+      end
+    end
+  end
+
+  describe '#add_group_to_program_session' do
+    it 'it returns true' do
+      VCR.use_cassette('groups/add_group_to_program_session/success') do
+        resp = client.add_group_to_program_session("6033a83de17eb78fdd56a5c5", "603cc3fbbc35b5684d66af9f")
+        expect(resp).to eq({})
       end
     end
   end

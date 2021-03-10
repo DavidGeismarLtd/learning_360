@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'httparty'
+require 'learning_360/resource'
 require 'learning_360/user'
 require 'learning_360/user_invitation'
 require 'learning_360/skill'
@@ -15,6 +16,7 @@ require 'learning_360/client/programs'
 require 'learning_360/client/skills'
 
 module Learning360
+  class ApiResponseError < StandardError; end
   # client for 360learning API
   class Client
     include HTTParty
@@ -59,7 +61,7 @@ module Learning360
     def request(resource = nil)
       parsed_response = JSON.parse(yield)
       error_message = parsed_response['error'] || parsed_response['message'] if parsed_response.is_a? Hash
-      raise error_message if error_message
+      raise(ApiResponseError, error_message) if error_message
       return parsed_response.map{ |item| resource.new(item) } if parsed_response.is_a?(Array) && resource
       return resource.new(parsed_response) if resource
 
