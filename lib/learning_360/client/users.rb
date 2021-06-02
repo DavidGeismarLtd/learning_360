@@ -7,7 +7,7 @@ module Learning360
       def create_or_invite_user(options = {})
         request(UserInvitation) do
           self.class.post(BASE, {
-                            body: URI.encode_www_form(options),
+                            body: options.to_query,
                             headers: {
                               'Content-Type' => 'application/x-www-form-urlencoded'
                             }
@@ -19,7 +19,7 @@ module Learning360
         request(User) do
           self.class.put(BASE, {
                            params: { user_email: email },
-                           body: URI.encode_www_form(options),
+                           body: options.to_query,
                            headers: {
                              'Content-Type' => 'application/x-www-form-urlencoded'
                            }

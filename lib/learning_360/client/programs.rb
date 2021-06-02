@@ -36,7 +36,7 @@ module Learning360
 
       def create_session(template_id, options = {})
         response = self.class.post("#{BASE}/#{template_id}/sessions", {
-                                     body: URI.encode_www_form(options),
+                                     body: options.to_query,
                                      headers: {
                                        'Content-Type' => 'application/x-www-form-urlencoded'
                                      }
@@ -46,7 +46,7 @@ module Learning360
 
       def update_session(template_id, session_id, options = {})
         response = self.class.put("#{BASE}/#{template_id}/sessions/#{session_id}", {
-                                    body: URI.encode_www_form(options),
+                                    body: options.to_query,
                                     headers: {
                                       'Content-Type' => 'application/x-www-form-urlencoded'
                                     }

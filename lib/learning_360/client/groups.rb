@@ -6,7 +6,7 @@ module Learning360
       BASE = '/groups'
       def create_group(options = {})
         response = self.class.post(BASE, {
-                                     body: URI.encode_www_form(options),
+                                     body: options.to_query,
                                      headers: {
                                        'Content-Type' => 'application/x-www-form-urlencoded'
                                      }
@@ -17,7 +17,7 @@ module Learning360
       def update_group(id, options = {})
         response = self.class.put("BASE/#{id}", {
                                     params: { user_email: email },
-                                    body: URI.encode_www_form(options),
+                                    body: options.to_query,
                                     headers: {
                                       'Content-Type' => 'application/x-www-form-urlencoded'
                                     }
@@ -55,7 +55,7 @@ module Learning360
 
       def add_user_to_group(group_id, user_email, options = {})
         response = self.class.put("#{BASE}/#{group_id}/users/#{user_email}", {
-                                    body: URI.encode_www_form(options),
+                                    body: options.to_query,
                                     headers: {
                                       'Content-Type' => 'application/x-www-form-urlencoded'
                                     }
@@ -65,7 +65,7 @@ module Learning360
 
       def remove_user_from_group(id, user_email, options = {})
         response = self.class.delete("#{BASE}/#{id}/users/#{user_email}", {
-                                       body: URI.encode_www_form(options),
+                                       body: options.to_query,
                                        headers: {
                                          'Content-Type' => 'application/x-www-form-urlencoded'
                                        }
@@ -86,7 +86,7 @@ module Learning360
 
       def add_to_catalog(id, options = {})
         response = self.class.delete("#{BASE}/#{id}/catalog", {
-                                       body: URI.encode_www_form(options),
+                                       body: options.to_query,
                                        headers: {
                                          'Content-Type' => 'application/x-www-form-urlencoded'
                                        }
@@ -96,7 +96,7 @@ module Learning360
 
       def delete_from_catalog(id, options = {})
         response = self.class.put("#{BASE}/#{id}/catalog", {
-                                    body: URI.encode_www_form(options),
+                                    body: options.to_query,
                                     headers: {
                                       'Content-Type' => 'application/x-www-form-urlencoded'
                                     }
