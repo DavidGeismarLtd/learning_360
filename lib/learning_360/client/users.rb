@@ -18,7 +18,7 @@ module Learning360
       def update_user(email, options = {})
         request(User) do
           self.class.put("BASE/#{email}", {
-                           body: options.to_query,
+                           body: options,
                            headers: {
                              'Content-Type' => 'application/x-www-form-urlencoded'
                            }
