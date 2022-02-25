@@ -103,6 +103,16 @@ module Learning360
                                   })
         JSON.parse(response.body)
       end
+
+      def get_group_catalog(group_id)
+        request(Group) do
+          self.class.get("#{BASE}/#{group_id}/catalog", {
+                           headers: {
+                             'Content-Type' => 'application/json'
+                           }
+                         }).body
+        end
+      end
     end
   end
 end
