@@ -83,12 +83,13 @@ module Learning360
       end
 
       def add_user_to_session(session_id, user_id)
-        response = self.class.put("#{BASE}/sessions/#{session_id}/users/#{user_id}", {
+        request do
+          self.class.put("#{BASE}/sessions/#{session_id}/users/#{user_id}", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }
-                                  })
-        JSON.parse(response.body)
+                                  }).body
+        end
       end
 
       def remove_user_from_session(session_id, user_id)
