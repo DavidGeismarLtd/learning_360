@@ -14,6 +14,7 @@ require 'learning_360/client/groups'
 require 'learning_360/client/courses'
 require 'learning_360/client/programs'
 require 'learning_360/client/skills'
+require 'learning_360/client/user_custom_fields'
 
 module Learning360
   class ApiResponseError < StandardError; end
@@ -25,6 +26,7 @@ module Learning360
     include Learning360::Client::Courses
     include Learning360::Client::Programs
     include Learning360::Client::Skills
+    include Learning360::Client::UserCustomFields
 
     attr_accessor :api_key, :company_id
     base_uri 'app.360learning.com/api/v1'
