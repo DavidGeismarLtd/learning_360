@@ -15,7 +15,7 @@ module Learning360
         end
       end
 
-      def program_templates
+      def retrieve_programs
         request(ProgramTemplate) do
           self.class.get("#{BASE}/templates", {
                                     headers: {

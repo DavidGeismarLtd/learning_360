@@ -36,7 +36,7 @@ module Learning360
         end
       end
 
-      def get_users
+      def retrieve_users
         request(User) do
           self.class.get(BASE, {
                            headers: {

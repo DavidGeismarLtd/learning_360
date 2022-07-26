@@ -5,7 +5,7 @@ module Learning360
     module Courses
       BASE = '/courses'
 
-      def get_courses
+      def retrieve_courses
         request(Course) do
           response = self.class.get(BASE, {
                                       headers: {
