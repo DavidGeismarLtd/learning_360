@@ -30,7 +30,7 @@ module Learning360
     include Learning360::Client::UserCustomFields
 
     attr_accessor :api_key, :company_id
-    base_uri 'app.360learning.com/api/v1'
+    base_uri 'https://app.360learning.com/api/v1'
 
     # Initializes a new Client object
     #
