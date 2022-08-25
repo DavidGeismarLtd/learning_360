@@ -25,10 +25,14 @@ module Learning360
         JSON.parse(response.body)
       end
 
+      # TODO handle multiple at once
       def add_custom_field_value(collection, target_id, custom_field_id, custom_field_value)
-        options = {
-          customFieldId: custom_field_id,
-          value: custom_field_value
+        options = { values: [
+            {
+              customFieldId: custom_field_id,
+              value: custom_field_value
+            }
+          ]
         }
         response = self.class.put("/#{collection}/#{target_id}#{BASE}", {
                                     body: options.to_query,
