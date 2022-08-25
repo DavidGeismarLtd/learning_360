@@ -25,8 +25,12 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def add_custom_field_value(collection, target_id, options={})
-        response = self.class.put("#{BASE}/#{collection}/#{target_id}", {
+      def add_custom_field_value(collection, target_id, custom_field_id, custom_field_value)
+        options = {
+          customFieldId: custom_field_id,
+          value: custom_field_value
+        }
+        response = self.class.put("/#{collection}/#{target_id}#{BASE}", {
                                     body: options.to_query,
                                     headers: {
                                       'Content-Type' => 'application/x-www-form-urlencoded'
