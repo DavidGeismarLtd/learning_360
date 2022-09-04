@@ -26,14 +26,8 @@ module Learning360
       end
 
       # TODO handle multiple at once
-      def add_custom_field_value(collection, target_id, custom_field_id, custom_field_value)
-        options = { values: [
-            {
-              customFieldId: custom_field_id,
-              value: custom_field_value
-            }
-          ]
-        }
+      def add_custom_field_value(collection, target_id, values = [])
+        options = { values: values }
         response = self.class.put("/#{collection}/#{target_id}#{BASE}", {
                                     body: options.to_query,
                                     headers: {
