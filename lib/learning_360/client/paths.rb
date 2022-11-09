@@ -16,7 +16,7 @@ module Learning360
         end
       end
 
-      def get_paths_sessions
+      def retrieve_path_sessions
         request(ProgramSession) do
           self.class.get("#{BASE}/sessions", {
                                     headers: {
@@ -26,7 +26,7 @@ module Learning360
         end
       end
 
-      def get_paths_users(path_id)
+      def retrieve_paths_users(path_id)
         request(User) do
           self.class.get("#{BASE}/#{path_id}/users", {
                                     headers: {
@@ -36,7 +36,7 @@ module Learning360
         end
       end
 
-      def get_path_session_users(session_id)
+      def retrieve_path_session_users(session_id)
         request(User) do
           self.class.get("#{BASE}/sessions/#{session_id}/users", {
                                     headers: {
@@ -54,7 +54,7 @@ module Learning360
       #     }
       #   }).body
       # end
-      def get_group_path_sessions(group_id)
+      def retrieve_group_path_sessions(group_id)
         request(Path) do
           self.class.get("groups/#{group_id}/pathsSessions", {
                                     headers: {
@@ -64,7 +64,7 @@ module Learning360
         end
       end
 
-      def get_user_path_session_stats(session_id, user_email_or_id)
+      def retrieve_user_path_session_stats(session_id, user_email_or_id)
         request(Path) do
           self.class.get("#{BASE}/sessions/#{session_id}/stats/#{user_email_or_id}", {
                                     headers: {
