@@ -17,7 +17,7 @@ module Learning360
       end
 
       def retrieve_path_sessions
-        request(ProgramSession) do
+        request(PathSession) do
           self.class.get("#{BASE}/sessions", {
                                     headers: {
                                       'Content-Type' => 'application/json'
