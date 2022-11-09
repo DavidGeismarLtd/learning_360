@@ -30,6 +30,7 @@ module Learning360
     include Learning360::Client::Programs
     include Learning360::Client::Skills
     include Learning360::Client::UserCustomFields
+    include Learning360::Client::Paths
 
     attr_accessor :api_key, :company_id
     base_uri 'https://app.360learning.com/api/v1'
