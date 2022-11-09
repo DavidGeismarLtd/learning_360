@@ -5,10 +5,10 @@ module Learning360
     module Paths
       BASE = '/paths'
 
-      def retrieve_paths(modified_after = nil)
+      def retrieve_paths(options = {})
         request(Path) do
             self.class.get(BASE, {
-                                      body: modified_after.to_query,
+                                      body: options.to_query,
                                       headers: {
                                         'Content-Type' => 'application/json'
                                       }
