@@ -82,7 +82,7 @@ module Learning360
                                   headers: {
                                     'Content-Type' => 'application/json'
                                   }
-                                }).body
+                                })
         JSON.parse(response.body)
       end
 
