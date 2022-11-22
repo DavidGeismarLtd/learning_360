@@ -80,7 +80,7 @@ module Learning360
                                     userEmails: user_emails
                                   }.to_query,
                                   headers: {
-                                    'Content-Type' => 'application/json'
+                                    'Content-Type' => 'application/x-www-form-urlencoded'
                                   }
                                 })
         JSON.parse(response.body)
