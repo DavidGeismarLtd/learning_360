@@ -74,16 +74,25 @@ module Learning360
         end
       end
 
-      def add_users_to_path_session(session_id, user_emails=[])
-        response =  self.class.patch("#{BASE}/sessions/#{session_id}/users", {
-                                  body: {
-                                    userEmails: user_emails
-                                  }.to_query,
+      request do
+        self.class.put("#{BASE}/sessions/#{session_id}/users/#{user_id}", {
                                   headers: {
-                                    'Content-Type' => 'application/x-www-form-urlencoded'
+                                    'Content-Type' => 'application/json'
                                   }
-                                })
-        JSON.parse(response.body)
+                                }).body
+      end
+
+      def add_users_to_path_session(session_id, user_emails=[])
+        request do
+          self.class.patch("#{BASE}/sessions/#{session_id}/users", {
+            body: {
+              userEmails: user_emails
+            }.to_query,
+            headers: {
+              'Content-Type' => 'application/x-www-form-urlencoded'
+            }
+          }).body
+        end
       end
 
       def add_groups_to_path_session(session_id, group_ids=[])
