@@ -74,14 +74,6 @@ module Learning360
         end
       end
 
-      request do
-        self.class.put("#{BASE}/sessions/#{session_id}/users/#{user_id}", {
-                                  headers: {
-                                    'Content-Type' => 'application/json'
-                                  }
-                                }).body
-      end
-
       def add_users_to_path_session(session_id, user_emails=[])
         request do
           self.class.patch("#{BASE}/sessions/#{session_id}/users", {
