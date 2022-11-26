@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Learning360
-  class Group < Resource
+  module Entities
+    class Path < Resource
+    end
   end
 end

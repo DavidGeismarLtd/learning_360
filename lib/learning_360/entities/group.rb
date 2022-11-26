@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Learning360
-  class Course < Resource
+  module Entities
+    class Group < Resource
+    end
   end
 end
