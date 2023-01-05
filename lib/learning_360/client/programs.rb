@@ -149,7 +149,17 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def get_program_session_stats(session_id, _user_email)
+
+      def get_user_program_session_stats(session_id, user_email)
+        response = self.class.get("#{BASE}/sessions/#{session_id}/stats/#{user_email}", {
+                                    headers: {
+                                      'Content-Type' => 'application/json'
+                                    }
+                                  })
+        JSON.parse(response.body)
+      end
+
+      def get_program_session_stats(session_id)
         response = self.class.get("#{BASE}/sessions/#{session_id}/stats", {
                                     headers: {
                                       'Content-Type' => 'application/json'
