@@ -15,7 +15,7 @@ module Learning360
         end
       end
 
-      def retrieve_programs
+      def retrieve_programs(options={})
         request(ProgramTemplate) do
           self.class.get("#{BASE}/templates", {
                                     headers: {
@@ -64,7 +64,7 @@ module Learning360
         end
       end
 
-      def retrieve_sessions
+      def retrieve_sessions(options={})
         request(ProgramSession) do
           self.class.get("#{BASE}/sessions", {
                                     headers: {

@@ -55,7 +55,7 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def retrieve_custom_fields
+      def retrieve_custom_fields(options={})
         request(UserCustomField) do
           response = self.class.get(BASE, {
                                       headers: {

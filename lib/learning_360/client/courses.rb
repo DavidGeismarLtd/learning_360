@@ -5,9 +5,10 @@ module Learning360
     module Courses
       BASE = '/courses'
 
-      def retrieve_courses
+      def retrieve_courses(options={})
         request(Course) do
           response = self.class.get(BASE, {
+                                      body: options.to_query,
                                       headers: {
                                         'Content-Type' => 'application/json'
                                       }

@@ -5,7 +5,7 @@ module Learning360
     module Skills
       BASE = '/skills'
 
-      def retrieve_skills
+      def retrieve_skills(options={})
         request(Skill) do
           self.class.get(BASE, {
                            headers: {
