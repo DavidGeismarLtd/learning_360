@@ -34,7 +34,7 @@ module Learning360
         JSON.parse(response.body)
       end
 
-      def retrieve_groups
+      def retrieve_groups(options = {})
         request(Group) do
           self.class.get(BASE, {
                            headers: {
