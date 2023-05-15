@@ -66,13 +66,12 @@ module Learning360
       end
 
       def retrieve_user_path_session_stats(session_id, user_email_or_id)
-        request(Path) do
-          self.class.get("#{BASE}/sessions/#{session_id}/stats/#{user_email_or_id}", {
+          response = self.class.get("#{BASE}/sessions/#{session_id}/stats/#{user_email_or_id}", {
                                     headers: {
                                       'Content-Type' => 'application/json'
                                     }
                                   }).body
-        end
+          JSON.parse(response.body)
       end
 
       def add_users_to_path_session(session_id, user_emails=[])
