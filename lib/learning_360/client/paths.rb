@@ -73,13 +73,18 @@ module Learning360
                                   })
           JSON.parse(response.body)
       end
-
-      def add_users_to_path_session(session_id, user_emails=[])
+      # can take either
+      # {
+      #   userEmails: user_emails
+      # }
+      # or
+      # {
+      #   userIds: user_ids
+      # }
+      def add_users_to_path_session(session_id, body={})
         request do
           self.class.patch("#{BASE}/sessions/#{session_id}/users", {
-            body: {
-              userEmails: user_emails
-            }.to_query,
+            body: body.to_query,
             headers: {
               'Content-Type' => 'application/x-www-form-urlencoded'
             }
