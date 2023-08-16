@@ -41,6 +41,9 @@ module Learning360
     # @param options [Hash]
     # @return [Learning360::Client]
     def initialize(options = {})
+      if Learning360.configuration.logger
+        self.class.logger Learning360.configuration.logger
+      end
       options.each do |key, value|
         instance_variable_set("@#{key}", value)
       end
