@@ -38,6 +38,16 @@ module Learning360
         end
       end
 
+      def retrieve_path(path_id)
+        request(Path) do
+            self.class.get("#{BASE}/#{path_id}", {
+                                      headers: {
+                                        'Content-Type' => 'application/json'
+                                      }
+                                    }).body
+        end
+      end
+
       def retrieve_path_session(path_session_id)
         request(PathSession) do
           self.class.get("#{BASE}/sessions/#{path_session_id}", {
