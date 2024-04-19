@@ -5,6 +5,28 @@ module Learning360
     module Paths
       BASE = '/paths'
 
+      def create_path(options = {})
+        request(Path) do
+          self.class.post(BASE, {
+            body: options.to_query,
+            headers: {
+              'Content-Type' => 'application/json'
+            }
+          }).body
+        end          
+      end
+
+      def create_path_session(path_id, options = {})
+        request(PathSession) do
+          self.class.post("#{BASE}/#{path_id}/sessions", {
+            body: options.to_query,
+            headers: {
+              'Content-Type' => 'application/json'
+            }
+          }).body
+        end
+      end
+
       def retrieve_paths(options = {})
         request(Path) do
             self.class.get(BASE, {
@@ -13,6 +35,16 @@ module Learning360
                                         'Content-Type' => 'application/json'
                                       }
                                     }).body
+        end
+      end
+
+      def retrieve_path_session(path_session_id)
+        request(PathSession) do
+          self.class.get("#{BASE}/sessions/#{path_session_id}", {
+                                    headers: {
+                                      'Content-Type' => 'application/json'
+                                    }
+                                  }).body
         end
       end
 
