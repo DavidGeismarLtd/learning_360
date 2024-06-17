@@ -71,11 +71,19 @@ module Learning360
     def request(resource = nil)
       parsed_response = JSON.parse(yield)
       error_message = parsed_response['error'] || parsed_response['message'] if parsed_response.is_a? Hash
-      raise(ApiResponseError, error_message) if error_message
+      # Check if the error message matches the specific pattern and raise a custom exception
+      if error_message && error_message.match?(/^an error occurred: \h{32}$/)
+        raise ApiResponseIdentifierError, error_message
+      elsif error_message
+        raise ApiResponseError, error_message
+      end
       return parsed_response.map{ |item| resource.new(item) } if parsed_response.is_a?(Array) && resource
       return resource.new(parsed_response) if resource
 
       parsed_response
+    rescue ApiResponseIdentifierError => e
+      Rails.logger.error("Handled specific API error with identifier: #{e.message}")
+      {} 
     end
   end
 end
