@@ -21,6 +21,7 @@ require 'learning_360/client/paths'
 require 'learning_360/client/user_custom_fields'
 
 module Learning360
+  class ApiResponseIdentifierError < StandardError; end
   class ApiResponseError < StandardError; end
   # client for 360learning API
   class Client
